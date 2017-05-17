@@ -9,7 +9,7 @@ public class MoveTile : MonoBehaviour
 
     bool onTray = false;
 
-    //Transform startPosition;
+    Transform startPosition;
     Vector3 startPositie;
 
     [SerializeField]
@@ -26,7 +26,7 @@ public class MoveTile : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
-        //startPosition = gameObject.GetComponent<Transform>();
+        startPosition = gameObject.GetComponent<Transform>();
         
         checkFree = GameObject.FindObjectOfType<CheckFreePosition>();
         letterValue = FindObjectOfType<LetterValues>();

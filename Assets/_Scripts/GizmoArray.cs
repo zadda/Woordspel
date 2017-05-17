@@ -32,6 +32,9 @@ public class GizmoArray : MonoBehaviour
         }
         while (gizmoIndex < freeGizmoPositions.Length);// && (textArray[textIndex].Contains("@") == true));  //(Environment.NewLine));
         gizmoIndex = 0;
+
+        Debug.Log("Start uitgevoerd");
+
     }
 
     public void Shuffle()
@@ -44,4 +47,25 @@ public class GizmoArray : MonoBehaviour
             teVerdelenLetters[i] = tempGO;
         }
     }
+
+    public void NewLetters()
+
+    {
+        gizmoIndex = 0;
+        Shuffle();
+
+        do
+        {
+            // freeGizmoPositions[gizmoIndex].transform.position = teVerdelenLetters[gizmoIndex].transform.position;
+            teVerdelenLetters[gizmoIndex].transform.position = freeGizmoPositions[gizmoIndex].transform.position;
+
+            teVerdelenLetters[gizmoIndex].SetStartPositionAfterGizmo();
+            //SetStartPositionAfterGizmo();
+
+            gizmoIndex++;
+        }
+        while (gizmoIndex < freeGizmoPositions.Length);// && (textArray[textIndex].Contains("@") == true));  //(Environment.NewLine));
+        gizmoIndex = 0;
+    }
+
 }
